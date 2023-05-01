@@ -2,12 +2,13 @@
 // If Entity din't have any method with decision of business logic, it is Anemic Entity
 // what is Anemic Entity? https://martinfowler.com/bliki/AnemicDomainModel.html
 
+import { Address } from "./address";
 
 class Customer {
 
     private _id: string;
     private _name: string = "";
-    private _address: Address;
+    private _address!: Address;
     private _active: boolean = false;
 
     constructor(id: string, name: string) {
@@ -25,23 +26,18 @@ class Customer {
         }
     }
 
-    get id(): string {
-        return this._id;
+    activate() {
+        if (this._address === undefined) {
+            throw new Error("Address is required")
+        }
+        this._active = true;
     }
 
-    get name(): string {
-        return this._name;
+    deactivate() {
+        this._active = false;
     }
 
-    get address(): string {
-        return this._address;
-    }
-
-    set name(name: string) {
-        this._name = name;
-    }
-
-    set address(address: string) {
+    set Address(address: Address) {
         this._address = address;
     }
 }
