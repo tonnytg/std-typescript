@@ -1,3 +1,16 @@
+# IDE
+.idea
+.vscode
+*.iml
+*.ipr
+*.iws
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*.swn
+~$*
+
 # Logs
 logs
 *.log
