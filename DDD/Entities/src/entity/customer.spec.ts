@@ -1,5 +1,6 @@
 import Order from "./order";
 import OrderItem from './order_item';
+import Customer from './customer';
 
 describe("Customer unit test", () => {
 
@@ -10,7 +11,7 @@ describe("Customer unit test", () => {
 
     it ("should return error", () => {
         expect( () => {
-            let customer = new Customer("1", );
+            let customer = new Customer("1", "");
         }).toThrowError("Name is required");
     });
 
